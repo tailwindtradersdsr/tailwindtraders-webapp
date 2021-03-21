@@ -15,7 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9398A549
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{02D67425-8F05-4F31-84EF-56BEF54BDAE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindTraders.WebApp.Tests", "TailwindTraders.WebApp.Tests\TailwindTraders.WebApp.Tests.csproj", "{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TailwindTraders.WebApp.Tests", "TailwindTraders.WebApp.Tests\TailwindTraders.WebApp.Tests.csproj", "{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3700BDC4-D105-404F-B915-E4AD8144D98A}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
