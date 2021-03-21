@@ -16,7 +16,7 @@
       "type": "String"
     },
     "logAnalyticsWorkspaceId": {
-      "defaultValue": "/subscriptions/c7f8ca1e-46f6-4a59-a039-15eaefd2337e/resourceGroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-c7f8ca1e-46f6-4a59-a039-15eaefd2337e-eus",
+      "defaultValue": "",
       "type": "String"
     }
   },
