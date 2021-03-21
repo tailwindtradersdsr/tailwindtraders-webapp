@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TailwindTraders.WebApp
+namespace TailwindTraders.WebApp.Classes
 {
     /// <summary>
     /// Bank account demo class.

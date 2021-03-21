@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TailwindTraders.WebApp;
+using TailwindTraders.WebApp.Classes;
 
 namespace BankTests
 {
