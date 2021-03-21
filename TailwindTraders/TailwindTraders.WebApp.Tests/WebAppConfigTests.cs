@@ -9,7 +9,7 @@ namespace WebAppTests
         [TestMethod]
         public void WebAppConfig_AppName_IsCorrect()
         {
-            string expected = "Tailwind Traders v2.0";
+            string expected = "Tailwind Traders v3.0";
             // Assert
             Assert.AreEqual(expected, TailwindTraders.WebApp.Classes.WebAppConfig.AppName, "Web app configuration AppName is not correct.");
         }
