@@ -5,6 +5,18 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TailwindTraders.WebApp", "TailwindTraders.WebApp\TailwindTraders.WebApp.csproj", "{D43248ED-117E-4C2D-BCA4-BCE59EA3C6E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{E19BB2B9-C0E3-40D5-BA13-50AF1C77B7AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9398A549-788C-4CD7-982F-F465486599E3}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\Build\tailwindtraders-webapp.classic.json = Pipelines\Build\tailwindtraders-webapp.classic.json
+		Pipelines\Build\tailwindtraders-webapp.yml = Pipelines\Build\tailwindtraders-webapp.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{02D67425-8F05-4F31-84EF-56BEF54BDAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindTraders.WebApp.Tests", "TailwindTraders.WebApp.Tests\TailwindTraders.WebApp.Tests.csproj", "{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,17 @@ Global
 		{D43248ED-117E-4C2D-BCA4-BCE59EA3C6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D43248ED-117E-4C2D-BCA4-BCE59EA3C6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D43248ED-117E-4C2D-BCA4-BCE59EA3C6E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9398A549-788C-4CD7-982F-F465486599E3} = {E19BB2B9-C0E3-40D5-BA13-50AF1C77B7AC}
+		{02D67425-8F05-4F31-84EF-56BEF54BDAE6} = {E19BB2B9-C0E3-40D5-BA13-50AF1C77B7AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1B903DF-ED06-489C-8699-265C63838639}
