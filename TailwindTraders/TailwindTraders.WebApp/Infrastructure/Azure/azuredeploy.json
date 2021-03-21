@@ -66,7 +66,8 @@
       "name": "[variables('webAppName')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('applicationInsightsName'))]"
+        "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]",
+        "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
       ],
       "kind": "app",
       "properties": {
@@ -84,19 +85,22 @@
           }
         ],
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]",
-        "reserved": false,
-        "isXenon": false,
-        "hyperV": false,
-        "siteConfig": {},
-        "scmSiteAlsoStopped": false,
-        "clientAffinityEnabled": true,
-        "clientCertEnabled": false,
-        "hostNamesDisabled": false,
-        "containerSize": 0,
-        "dailyMemoryTimeQuota": 0,
-        "httpsOnly": false,
-        "redundancyMode": "None"
-      }
+        "clientAffinityEnabled": true
+      },
+      "resources": [
+        {
+          "apiVersion": "2018-11-01",
+          "name": "appsettings",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', variables('webAppName'))]",
+            "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
+          ],
+          "properties": {
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]"
+          }
+        }
+      ]
     },
     {
       "type": "Microsoft.Web/sites/config",
@@ -191,7 +195,8 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', variables('webAppName'))]",
-        "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]"
+        "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]",
+        "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
       ],
       "kind": "app",
       "properties": {
@@ -209,19 +214,22 @@
           }
         ],
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]",
-        "reserved": false,
-        "isXenon": false,
-        "hyperV": false,
-        "siteConfig": {},
-        "scmSiteAlsoStopped": false,
-        "clientAffinityEnabled": true,
-        "clientCertEnabled": false,
-        "hostNamesDisabled": false,
-        "containerSize": 0,
-        "dailyMemoryTimeQuota": 0,
-        "httpsOnly": false,
-        "redundancyMode": "None"
-      }
+        "clientAffinityEnabled": true
+      },
+      "resources": [
+        {
+          "apiVersion": "2018-11-01",
+          "name": "appsettings",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', variables('webAppName'))]",
+            "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
+          ],
+          "properties": {
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]"
+          }
+        }
+      ]
     },
     {
       "type": "Microsoft.Web/sites/slots/config",
