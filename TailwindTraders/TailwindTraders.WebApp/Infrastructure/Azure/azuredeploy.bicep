@@ -63,21 +63,20 @@ resource webAppName 'Microsoft.Web/sites@2018-11-01' = {
       }
     ]
     serverFarmId: serverFarmName.id
-    reserved: false
-    isXenon: false
-    hyperV: false
-    siteConfig: {}
-    scmSiteAlsoStopped: false
     clientAffinityEnabled: true
-    clientCertEnabled: false
-    hostNamesDisabled: false
-    containerSize: 0
-    dailyMemoryTimeQuota: 0
-    httpsOnly: false
-    redundancyMode: 'None'
   }
   dependsOn: [
-    resourceId('Microsoft.Web/serverfarms', applicationInsightsName_var)
+    applicationInsightsName
+  ]
+}
+
+resource webAppName_appsettings 'Microsoft.Web/sites/config@2018-11-01' = {
+  name: '${webAppName.name}/appsettings'
+  properties: {
+    APPINSIGHTS_INSTRUMENTATIONKEY: reference('microsoft.insights/components/${applicationInsightsName_var}').InstrumentationKey
+  }
+  dependsOn: [
+    applicationInsightsName
   ]
 }
 
@@ -152,7 +151,6 @@ resource webAppName_web 'Microsoft.Web/sites/config@2018-11-01' = {
 
 resource webAppName_webAppName_azurewebsites_net 'Microsoft.Web/sites/hostNameBindings@2018-11-01' = {
   name: '${webAppName.name}/${webAppName_var}.azurewebsites.net'
-  location: resourceGroup().location
   properties: {
     siteName: 'variables(\'webAppName\')'
     hostNameType: 'Verified'
@@ -178,19 +176,21 @@ resource webAppName_offline 'Microsoft.Web/sites/slots@2018-11-01' = {
       }
     ]
     serverFarmId: serverFarmName.id
-    reserved: false
-    isXenon: false
-    hyperV: false
-    siteConfig: {}
-    scmSiteAlsoStopped: false
     clientAffinityEnabled: true
-    clientCertEnabled: false
-    hostNamesDisabled: false
-    containerSize: 0
-    dailyMemoryTimeQuota: 0
-    httpsOnly: false
-    redundancyMode: 'None'
   }
+  dependsOn: [
+    applicationInsightsName
+  ]
+}
+
+resource webAppName_offline_appsettings 'Microsoft.Web/sites/slots/config@2018-11-01' = {
+  name: '${webAppName_offline.name}/appsettings'
+  properties: {
+    APPINSIGHTS_INSTRUMENTATIONKEY: reference('microsoft.insights/components/${applicationInsightsName_var}').InstrumentationKey
+  }
+  dependsOn: [
+    applicationInsightsName
+  ]
 }
 
 resource webAppName_offline_web 'Microsoft.Web/sites/slots/config@2018-11-01' = {
@@ -266,7 +266,6 @@ resource webAppName_offline_web 'Microsoft.Web/sites/slots/config@2018-11-01' = 
 
 resource webAppName_offline_webAppName_offline_azurewebsites_net 'Microsoft.Web/sites/slots/hostNameBindings@2018-11-01' = {
   name: '${webAppName_offline.name}/${webAppName_var}-offline.azurewebsites.net'
-  location: resourceGroup().location
   properties: {
     siteName: '${webAppName_var}(offline)'
     hostNameType: 'Verified'

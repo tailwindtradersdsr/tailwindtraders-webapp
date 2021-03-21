@@ -179,7 +179,6 @@
       "type": "Microsoft.Web/sites/hostNameBindings",
       "apiVersion": "2018-11-01",
       "name": "[concat(variables('webAppName'), '/', variables('webAppName'), '.azurewebsites.net')]",
-      "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', variables('webAppName'))]"
       ],
@@ -222,7 +221,7 @@
           "name": "appsettings",
           "type": "config",
           "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variables('webAppName'))]",
+            "[resourceId('Microsoft.Web/sites/slots', variables('webAppName'), 'offline')]",
             "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
           ],
           "properties": {
@@ -308,7 +307,6 @@
       "type": "Microsoft.Web/sites/slots/hostNameBindings",
       "apiVersion": "2018-11-01",
       "name": "[concat(variables('webAppName'), '/offline/', variables('webAppName'), '-offline.azurewebsites.net')]",
-      "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites/slots', variables('webAppName'), 'offline')]",
         "[resourceId('Microsoft.Web/sites', variables('webAppName'))]"
