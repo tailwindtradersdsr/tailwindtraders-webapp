@@ -14,6 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9398A549
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{02D67425-8F05-4F31-84EF-56BEF54BDAE6}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\Release\tailwindtraders-webapp.release.json = Pipelines\Release\tailwindtraders-webapp.release.json
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TailwindTraders.WebApp.Tests", "TailwindTraders.WebApp.Tests\TailwindTraders.WebApp.Tests.csproj", "{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}"
 EndProject
@@ -21,6 +24,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\DEMOSCRIPT.md = ..\DEMOSCRIPT.md
 		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AD651665-AD1F-4CBA-A569-11ED6E3DCA42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{15840F30-C73C-4196-A6E4-B1C69263CBCA}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Azure\azuredeploy.bicep = Infrastructure\Azure\azuredeploy.bicep
+		Infrastructure\Azure\azuredeploy.json = Infrastructure\Azure\azuredeploy.json
 	EndProjectSection
 EndProject
 Global
@@ -44,6 +55,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9398A549-788C-4CD7-982F-F465486599E3} = {E19BB2B9-C0E3-40D5-BA13-50AF1C77B7AC}
 		{02D67425-8F05-4F31-84EF-56BEF54BDAE6} = {E19BB2B9-C0E3-40D5-BA13-50AF1C77B7AC}
+		{15840F30-C73C-4196-A6E4-B1C69263CBCA} = {AD651665-AD1F-4CBA-A569-11ED6E3DCA42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1B903DF-ED06-489C-8699-265C63838639}
