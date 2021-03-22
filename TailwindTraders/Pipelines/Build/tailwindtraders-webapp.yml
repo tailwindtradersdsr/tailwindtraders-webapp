@@ -54,6 +54,6 @@ jobs:
   - task: PublishPipelineArtifact@1
     displayName: Publish ARM
     inputs:
-      path: TailwindTraders/TailwindTraders.WebApp/Infrastructure/Azure
+      path: TailwindTraders/Infrastructure/Azure
       artifactName: Azure
 ...
