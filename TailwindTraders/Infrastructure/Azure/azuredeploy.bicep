@@ -1,12 +1,11 @@
 param baseName string = 'dsr'
 param appName string = 'tailwindtraders'
-
 @allowed([
   'test'
   'prod'
 ])
 param environment string = 'test'
-param logAnalyticsWorkspaceId string = '/subscriptions/c7f8ca1e-46f6-4a59-a039-15eaefd2337e/resourceGroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-c7f8ca1e-46f6-4a59-a039-15eaefd2337e-eus'
+param logAnalyticsWorkspaceId string = ''
 
 var applicationInsightsName_var = '${baseName}-${appName}-${environment}-ai'
 var serverFarmName_var = '${baseName}-${appName}-${environment}-asp'

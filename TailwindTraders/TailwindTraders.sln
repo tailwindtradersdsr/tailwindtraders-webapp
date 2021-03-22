@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{15840F30
 	ProjectSection(SolutionItems) = preProject
 		Infrastructure\Azure\azuredeploy.bicep = Infrastructure\Azure\azuredeploy.bicep
 		Infrastructure\Azure\azuredeploy.json = Infrastructure\Azure\azuredeploy.json
+		Infrastructure\Azure\INSTRUCTIONS.md = Infrastructure\Azure\INSTRUCTIONS.md
 	EndProjectSection
 EndProject
 Global
