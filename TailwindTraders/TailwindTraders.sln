@@ -14,6 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9398A549
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{02D67425-8F05-4F31-84EF-56BEF54BDAE6}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\Release\tailwindtraders-webapp.release.json = Pipelines\Release\tailwindtraders-webapp.release.json
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TailwindTraders.WebApp.Tests", "TailwindTraders.WebApp.Tests\TailwindTraders.WebApp.Tests.csproj", "{8224E89B-DAB7-4AF2-9131-1FC8E9F59ED9}"
 EndProject
