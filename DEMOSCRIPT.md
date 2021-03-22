@@ -88,19 +88,17 @@
 1. Select `Work Items`.
 1. Edit a work item.
 1. Create a new story:
-    1. Title: `Correct title on the main app page`
+    1. Title: `Update the title on the main page to V9.1`
     1. Area: `Website Team`.
-    1. Description: `Change title`.
+    1. Description: `Change title and update tests`.
     1. Set story points: 1.
+    1. **Note the 'Links' to GitHub and Deployment**
     1. Save the item.
 1. Select `Boards`.
 1. Select Website Team Boards.
 1. Point out story that was just created.
-1. Add task: 'CHange title'
-1. Add task: 'Update tests'
-1. Move story to `Active`.
-1. Note assigned to me.
-1. Open work item and note the 'Links' to GitHub and Deployment
+1. Add task: `Change title`
+1. Add task: `Update tests`
 1. Select `Sprints`.
 1. Change to `Tailwind Traders Team`.
 1. Select `Capacity`
@@ -131,19 +129,11 @@ Talk briefly about GitHub issues.
 1. Show application in Visual Studio 2019 and indicate .NET Core MVC with Tests.
 1. Show Infrastructure folder.
 
-## GitHub Codespaces
-
-### Brief demonstration of GitHub Codespaces
-
-> Time: 3 min
-
-1. Open https://github.com/codepsaces in NORMAL browser to use PlagueHO account.
-1. Show Source file.
-1. In terminal run `./build.ps1 -Tasks test`
-
 ## Infrastructure as Code
 
 ### Display ARM Template
+
+TODO: 
 
 ## Branches, Pull Requests and Continuous Integration & Automated Testing
 
@@ -155,6 +145,62 @@ Talk briefly about GitHub issues.
 - [Dev/Test Offline](https://dsrtailwindtraderstest-offline.azurewebsites.net)
 - [Prod](https://dsrtailwindtradersprod.azurewebsites.net)
 - [Prod Offline](https://dsrtailwindtradersprod-offline.azurewebsites.net)
+
+1. Open the [Dev/Test](https://dsrtailwindtraderstest.azurewebsites.net) app - note says old version number
+1. Select `Website Team` [board](https://dev.azure.com/dscottraynsfordlabs/Tailwind%20Traders/_boards/board/t/Website%20Team/Stories) and remind users of previously created issue.
+1. Drag the issue created earlier to `Active` and **NOTE ISSUE NUMBER**
+1. Open GitHub repo using @PlagueHO - note using a different user to make the change.
+1. **Point out that we'd normally work in a development IDE like Visual Studio or VS Code, but we're going to use GitHub Codespaces**
+1. Open [GitHub Codespaces](https://github.com/codespaces).
+1. Open codespace for [tailwindtradersdsr/tailwindtraders-webapp](https://github.com/codespaces/plagueho-tailwindtradersdsr-tailwindtraders-webapp-qf7m)
+1. In Codespace create a new branch (Click `main` branch in footer).
+1. Enter name `DSR/ABxxx` where xxx is the Issue number.
+1. Edit file `/workspaces/tailwindtraders-webapp/TailwindTraders/TailwindTraders.WebApp/Classes/WebAppConfig.cs`
+1. Change `AppName` to "Tailwind Traders v9.0 - DevOps Rocks!" **NOTE: INTENTIONALLY DIFFERENT TO WORKITEM**
+1. Commit the change with a message **including the AB#xxx of the UPDATE PAGE SUBTASK**
+1. Create the PR through GitHub Codespaces.
+1. Show that the PR is now in GitHub.
+1. Request review from dscottraynsford.
+1. Switch to GitHub with `@PlagueHO` to show the PR.
+1. Click `Start Review`.
+1. Add a comment against the `AppName` line requesting a change.
+1. Click `Complete Review` as `Request Changes`.
+1. Note that the `build` has now failed and says `Required`.
+1. Click the `Details` against the failed build and show that one of the tests failed.
+1. Switch back to the Codespace as `@PlagueHO`.
+1. Edit file `/workspaces/tailwindtraders-webapp/TailwindTraders/TailwindTraders.WebApp/Classes/WebAppConfig.cs`
+1. Change `AppName` to "Tailwind Traders v9.0".
+1. Edit file `/workspaces/tailwindtraders-webapp/TailwindTraders/TailwindTraders.WebApp.Tests/WebAppConfigTests.cs`.
+1. Change `expected` to "Tailwind Traders v9.0".
+1. Commit the change with a message **including the AB#xxx of the UPDATE UNIT TESTS SUBTASK**
+1. Switch back to GitHub PR with `@PlagueHO`.
+1. Show the new commit has appeared.
+1. Enter a new comment saying that it is ready for review and tagging `@dscottraynsford`.
+1. Switch back to GitHub PR with `@dscottraysnford`.
+1. Complete review and approve it with comment: "Looks good to merge".
+1. Point out that build has now completed and passed - also point out Code QL and other security checks run by GitHub.
+1. Switch back to GitHub PR with `@PlagueHO`.
+1. Merge the PR.
+1. Delete the branch - point out that this is good hygiene - feature branches should not be reused.
+1. Switch back to Boards.
+1. Edit the Workitem from earlier and show the `Development` links.
+1. Head back to the Pipelines and show the [tailwindtraders-webapp.classic](https://dev.azure.com/dscottraynsfordlabs/Tailwind%20Traders/_build?definitionId=12)
+1. Show the latest build (the merge build) - explain why this happened.
+1. Click `Tests`.
+1. Click `Releases`.
+1. Talk about `Release Pipelines`.
+1. Show the release that is completed to `Dev/Test`
+1. Open the [Dev/Test](https://dsrtailwindtraderstest.azurewebsites.net) app - note says new version number.
+1. Note that Production appears to be waiting...
+1. Show that it is waiting for approval.
+1. Approve the deployment.
+1. Open the Deployment and watch it proceed.
+1. Explain process.
+1. Quickly switch back to issue and show `Deployment` status.
+1. Switch back to `Release`.
+1. Show release completed.
+1. Quickly switch back to issue and show `Deployment` status.
+1. Drag issue to `Closed`.
 
 
 ### Create Build Pipeline
@@ -190,3 +236,13 @@ Talk briefly about GitHub issues.
 1. Click `Save Changes`.
 
 ### 
+
+## Appendix A - GitHub Codespaces
+
+### Brief demonstration of GitHub Codespaces
+
+> Time: 3 min
+
+1. Open https://github.com/codepsaces in NORMAL browser to use PlagueHO account.
+1. Show Source file.
+1. In terminal run `./build.ps1 -Tasks test`
