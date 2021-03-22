@@ -10,7 +10,7 @@ namespace TailwindTraders.WebApp.Classes
         public static string AppName { get; }
 
         static WebAppConfig() {
-            AppName = "Tailwind Traders v3.0 - DevOps Rocks!";
+            AppName = "Tailwind Traders v4.0";
         }
     }
 }
