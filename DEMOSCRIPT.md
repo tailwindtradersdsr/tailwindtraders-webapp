@@ -7,7 +7,16 @@
 1. Uninstall Azure Pipelines App.
 1. Open: https://dev.azure.com/dscottraynsfordlabs/Tailwind%20Traders%20(Special)
 1. Remove GitHub connection.
-1. Remove work item "Correct title on the main app page"
+1. Remove work item "Correct title on the main app page" and subitems.
+1. Open two browsers:
+    1. Private browser - for "dscottraynsford" demo user:
+        - Open https://github.com
+        - Open https://visualstudio.com
+    1. Normal browser - for "PlagueHO" coder user:
+        - Open https://github.com/tailwindtradersdsr/tailwindtraders-webapp
+        - Open https://github.com/codespaces/
+        - Open https://plagueho-tailwindtradersdsr-tailwindtraders-webapp-qf7m.github.dev/
+
 
 ## Getting Started
 
