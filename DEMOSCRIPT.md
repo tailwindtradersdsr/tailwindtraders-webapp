@@ -140,9 +140,46 @@ Talk briefly about GitHub issues.
 
 ## Infrastructure as Code
 
-### Display ARM Template
+### Show the Infrastructure in Azure
 
-TODO: 
+1. Open [Azure Portal](https://portal.azure.com)
+1. Open the `dsr-tailwindtraders-test-rg` resource group
+1. Point out the very simple architecture and Azure services.
+
+### Show an ARM Template
+
+1. Open [GitHub codespaces](https://plagueho-tailwindtradersdsr-tailwindtraders-webapp-qf7m.github.dev/)
+1. Open [ARM Template](/workspaces/tailwindtraders-webapp/TailwindTraders/Infrastructure/Azure/azuredeploy.json)
+1. Take them throught the basics of an ARM template: Resources, Parameters, Variables
+
+### Export an ARM Template
+
+1. Open [Azure Portal](https://portal.azure.com)
+1. Open the `dsr-tailwindtraders-test-rg` resource group
+1. Export the ARM Template.
+ 
+### Show Azure Quickstarts
+
+1. Open [Azure Quickstart Templates](https://azure.microsoft.com/en-us/resources/templates/)
+1. Search for `API Management`.
+1. Select a template.
+1. Click browse on GitHub.
+1. Open the `azuredeploy.json` file.
+
+### Apply an ARM Template
+
+1. In the terminal connect to Azure with `az login`
+1. Select my subscription with `az account set --subscription 'Customer'`
+1. Create Resource Group with `az group create \
+    --name dsr-tailwindtraders-test-rg \
+    --location east`
+1. Deploy template with `az deployment group create \
+    --resource-group dsr-tailwindtraders-test-rg \
+    --template-file ./TailwindTraders/Infrastructure/Azure/azuredeploy.json \
+    --parameters baseName=dsr appName=tailwindtraders environment=test logAnalyticsWorkspaceId="/subscriptions/c7f8ca1e-46f6-4a59-a039-15eaefd2337e/resourceGroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-c7f8ca1e-46f6-4a59-a039-15eaefd2337e-eus"`
+
+### Show Bicep
+
 
 ## Branches, Pull Requests and Continuous Integration & Automated Testing
 
