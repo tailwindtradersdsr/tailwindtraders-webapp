@@ -8,6 +8,7 @@
 1. Open: https://dev.azure.com/dscottraynsfordlabs/Tailwind%20Traders%20(Special)
 1. Remove GitHub connection.
 1. Remove work item "Correct title on the main app page" and subitems.
+1. Delete `tailwindtraders-webapp.classic.new` pipeline.
 1. Open two browsers:
     1. Private browser - for "dscottraynsford" demo user:
         - Open https://github.com
@@ -16,6 +17,7 @@
         - Open https://github.com/tailwindtradersdsr/tailwindtraders-webapp
         - Open https://github.com/codespaces/
         - Open https://plagueho-tailwindtradersdsr-tailwindtraders-webapp-qf7m.github.dev/
+        - Login to Azure CLI
 
 
 ## Getting Started
@@ -187,9 +189,7 @@ Talk briefly about GitHub issues.
 1. Compile a bicep file with `../bicep build ./TailwindTraders/Infrastructure/Azure/azuredeploy.bicep --outfile ./TailwindTraders/Infrastructure/Azure/azuredeploy.compiled.json`
 1. Show [compiled ARM Template]([ARM Template](/workspaces/tailwindtraders-webapp/TailwindTraders/Infrastructure/Azure/azuredeploy.compiled.json))
 
-
-
-## Branches, Pull Requests and Continuous Integration & Automated Testing
+## Continuous Integration & continuous delivery
 
 ### End-to-end demonstration
 
@@ -256,9 +256,9 @@ Talk briefly about GitHub issues.
 1. Quickly switch back to issue and show `Deployment` status.
 1. Drag issue to `Closed`.
 
-
 ### Create Build Pipeline
 
+1. Select Pipelines/Build.
 1. Create a New Pipeline
 1. Select Classic Editor - **Discus pipeline as code with YAML**
 1. Select GitHub
@@ -274,9 +274,13 @@ Talk briefly about GitHub issues.
 1. Select Triggers.
 1. Enable Continuous Integration.
 1. Enable Pull Request validation.
-1. Rename the pipeline
+1. Rename the pipeline.
 1. Save the pipeline as `tailwindtraders-webapp.classic.new`.
-1. Run the pipeline
+1. Run the pipeline.
+1. Open the pipeline.
+1. Select `Export to YAML` from the menu.
+1. Explain that this can be used to easily generate a pipeline as code file from Classic.
+1. Open the `/workspaces/tailwindtraders-webapp/TailwindTraders/Pipelines/Build/tailwindtraders-webapp.yml` file and show the YAML file.
 
 ### Create Branch Protection Rule
 
@@ -287,9 +291,35 @@ Talk briefly about GitHub issues.
 1. Tick `Require pull request reviews before merging`.
 1. Tick `Require status checks to pass before merging`.
 1. Select `tailwindtraders-webapp.classic`.
+1. Point out that Code quality checks and explain these.
 1. Click `Save Changes`.
 
-### 
+### Release Pipeline
+
+1. Select Pipelines/Release.
+1. Select `tailwindtraders-webapp.release`.
+1. Explain the existing releases and environments.
+1. Select `New Release Pipeline` from `New`.
+1. **Explain the `Templates`.**
+1. Select `Azure App Service deployment with slot`.
+1. Type `Dev\Test` in Stage Name.
+1. Click `Add an Artifact`.
+1. Select `Build`.
+1. Set source to `tailwindtraders-webapp.classic`.
+1. Set `Default Version` to `latest`.
+1. Set `Source Alias` to `_tailwindtraders-webapp.classic`.
+1. Click `Add`.
+1. Click `Continuous Deployment` trigger.
+1. Tick `Enabled`.
+1. Add a new build branch filter and set to `main`.
+1. **Explain the build branch filters.**
+1. **Explain that we'll show the existing release pipeline in the absense of time**
+1. Edit the existing Release Pipeline.
+1. **Explain the pipeline stages and pipeline steps**.
+1. **Explain the variables**.
+1. **Explain the pre-deplyoment approvals**.
+1. **Explain the Gates**.
+1. **Show the Options/Integrations and explain how the link to boards**.
 
 ## Appendix A - GitHub Codespaces
 
