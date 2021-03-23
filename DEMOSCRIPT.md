@@ -180,6 +180,14 @@ Talk briefly about GitHub issues.
 
 ### Show Bicep
 
+1. Open [GitHub codespaces](https://plagueho-tailwindtradersdsr-tailwindtraders-webapp-qf7m.github.dev/)
+1. Open [ARM Template](/workspaces/tailwindtraders-webapp/TailwindTraders/Infrastructure/Azure/azuredeploy.bicep)
+1. Take them throught the basics of a Bicep file: Resources, Parameters, Variables
+1. Point out the Bicep VS Code extension.
+1. Compile a bicep file with `../bicep build ./TailwindTraders/Infrastructure/Azure/azuredeploy.bicep --outfile ./TailwindTraders/Infrastructure/Azure/azuredeploy.compiled.json`
+1. Show [compiled ARM Template]([ARM Template](/workspaces/tailwindtraders-webapp/TailwindTraders/Infrastructure/Azure/azuredeploy.compiled.json))
+
+
 
 ## Branches, Pull Requests and Continuous Integration & Automated Testing
 
