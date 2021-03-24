@@ -53,5 +53,5 @@ Generate a bicep file from an ARM template.
 Generate am ARM Template from a bicep file.
 
 ```bash
-../bicep build ./TailwindTraders/Infrastructure/Azure/azuredeploy.bicep --outfile ./TailwindTraders/Infrastructure/Azure/azuredeploy.compiled.json
+term
 ```
