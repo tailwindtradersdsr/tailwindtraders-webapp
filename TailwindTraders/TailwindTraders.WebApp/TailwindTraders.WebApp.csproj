@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>f734b036-fec8-4a15-b941-f3cb10efb23f</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/c7f8ca1e-46f6-4a59-a039-15eaefd2337e/resourceGroups/dsr-tailwindtraders-test-rg/providers/microsoft.insights/components/dsr-tailwindtraders-test-ai</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
