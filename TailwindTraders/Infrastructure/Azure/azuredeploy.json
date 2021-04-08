@@ -97,7 +97,8 @@
             "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
           ],
           "properties": {
-            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]"
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]",
+            "APPLICATIONINSIGHTS_CONNECTION_STRING": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).ConnectionString]"
           }
         }
       ]
@@ -225,7 +226,8 @@
             "[resourceId('microsoft.insights/components',variables('applicationInsightsName'))]"
           ],
           "properties": {
-            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]"
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).InstrumentationKey]",
+            "APPLICATIONINSIGHTS_CONNECTION_STRING": "[reference(concat('microsoft.insights/components/', variables('applicationInsightsName'))).ConnectionString]"
           }
         }
       ]
